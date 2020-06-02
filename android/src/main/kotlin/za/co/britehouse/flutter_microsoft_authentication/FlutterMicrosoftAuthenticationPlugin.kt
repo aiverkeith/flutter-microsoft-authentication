@@ -172,7 +172,7 @@ class FlutterMicrosoftAuthenticationPlugin: MethodCallHandler {
       override fun onSuccess(authenticationResult: IAuthenticationResult) {
         /* Successfully got a token, use it to call a protected resource - MSGraph */
         Log.d(TAG, "Successfully authenticated")
-        Log.d(TAG, "ID Token: " + authenticationResult.account.claims!!["id_token"])
+        Log.d(TAG, "ID Token: " + authenticationResult.idToken)
         val accessToken = authenticationResult.accessToken
         result.success(accessToken)
       }
